@@ -16,6 +16,7 @@
   --line:#dfd4c6;
   --deep:#7f6f61;
   --shadow:0 24px 70px rgba(94,74,54,.12);
+  --container:1180px;
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -53,12 +54,14 @@ body::before{
 
 /* HERO */
 .hero{
+  max-width:var(--container);
   min-height:100vh;
+  margin:auto;
   display:grid;
   grid-template-columns:1fr 1.15fr;
   gap:56px;
   align-items:center;
-  padding:72px 7vw;
+  padding:72px 24px;
 }
 
 .kicker{
@@ -114,7 +117,7 @@ body::before{
 .hero-photo,
 .family-photo{
   position:relative;
-  padding:18px;
+  padding:14px;
   background:rgba(255,250,242,.68);
   border:1px solid var(--line);
   border-radius:42px;
@@ -136,7 +139,12 @@ body::before{
 
 /* SECTION */
 .section{
-  padding:110px 7vw;
+  padding:110px 24px;
+}
+
+.section-inner{
+  max-width:var(--container);
+  margin:auto;
 }
 
 .section-head{
@@ -162,8 +170,6 @@ body::before{
 
 /* ALBUM */
 .album{
-  max-width:1180px;
-  margin:auto;
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:24px;
@@ -211,12 +217,10 @@ body::before{
   letter-spacing:.14em;
 }
 
-/* FAMILY + LETTER */
+/* FAMILY LETTER */
 .family-letter{
-  max-width:1080px;
-  margin:auto;
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1.28fr .92fr;
   gap:46px;
   align-items:center;
   background:rgba(255,250,242,.72);
@@ -226,13 +230,19 @@ body::before{
   box-shadow:var(--shadow);
 }
 
+.family-photo{
+  padding:12px;
+}
+
 .family-photo img{
-  aspect-ratio:1.25/1;
+  height:auto;
+  object-fit:contain;
+  border-radius:28px;
 }
 
 .family-letter-content{
   text-align:left;
-  padding:10px 6px;
+  padding:20px 10px;
 }
 
 .family-letter-content .en{
@@ -286,6 +296,8 @@ body::before{
 
 /* FOOTER */
 footer{
+  max-width:var(--container);
+  margin:auto;
   padding:70px 24px;
   text-align:center;
   color:var(--muted);
@@ -376,6 +388,10 @@ footer strong{
     grid-template-columns:1fr;
     padding:32px 24px;
   }
+
+  .family-letter-content{
+    padding:10px 6px;
+  }
 }
 
 @media(max-width:560px){
@@ -383,10 +399,14 @@ footer strong{
     padding:86px 18px;
   }
 
+  .hero{
+    padding:42px 18px 84px;
+  }
+
   .hero-photo,
   .family-photo{
     border-radius:32px;
-    padding:12px;
+    padding:10px;
   }
 
   .hero-photo img,
@@ -413,7 +433,7 @@ footer strong{
   }
 
   .family-letter{
-    padding:24px 18px;
+    padding:22px 16px;
     border-radius:34px;
   }
 
@@ -457,53 +477,57 @@ footer strong{
 </section>
 
 <section class="section">
-  <div class="section-head reveal">
-    <div class="en">Precious Moments</div>
-    <h2>宇莃寫真集</h2>
-  </div>
+  <div class="section-inner">
+    <div class="section-head reveal">
+      <div class="en">Precious Moments</div>
+      <h2>宇莃寫真集</h2>
+    </div>
 
-  <div class="album">
-    <figure class="photo reveal" data-index="1"><div class="frame"><img src="images/photo01.jpg" alt=""></div><figcaption>N° 01 初來報到</figcaption></figure>
-    <figure class="photo reveal" data-index="2"><div class="frame"><img src="images/photo02.jpg" alt=""></div><figcaption>N° 02 安心入睡</figcaption></figure>
-    <figure class="photo reveal" data-index="3"><div class="frame"><img src="images/photo03.jpg" alt=""></div><figcaption>N° 03 小小微笑</figcaption></figure>
-    <figure class="photo reveal" data-index="4"><div class="frame"><img src="images/photo04.jpg" alt=""></div><figcaption>N° 04 滿月紀念</figcaption></figure>
-    <figure class="photo reveal" data-index="5"><div class="frame"><img src="images/photo05.jpg" alt=""></div><figcaption>N° 05 被愛包圍</figcaption></figure>
-    <figure class="photo reveal" data-index="6"><div class="frame"><img src="images/photo06.jpg" alt=""></div><figcaption>N° 06 幸福時光</figcaption></figure>
-    <figure class="photo reveal" data-index="7"><div class="frame"><img src="images/photo07.jpg" alt=""></div><figcaption>N° 07 甜甜夢鄉</figcaption></figure>
-    <figure class="photo reveal" data-index="8"><div class="frame"><img src="images/photo08.jpg" alt=""></div><figcaption>N° 08 溫柔凝望</figcaption></figure>
-    <figure class="photo reveal" data-index="9"><div class="frame"><img src="images/photo09.jpg" alt=""></div><figcaption>N° 09 宇莃日常</figcaption></figure>
-    <figure class="photo reveal" data-index="10"><div class="frame"><img src="images/photo10.jpg" alt=""></div><figcaption>N° 10 小手小腳</figcaption></figure>
-    <figure class="photo reveal" data-index="11"><div class="frame"><img src="images/photo11.jpg" alt=""></div><figcaption>N° 11 一家人的愛</figcaption></figure>
-    <figure class="photo reveal" data-index="12"><div class="frame"><img src="images/photo12.jpg" alt=""></div><figcaption>N° 12 滿滿祝福</figcaption></figure>
+    <div class="album">
+      <figure class="photo reveal" data-index="1"><div class="frame"><img src="images/photo01.jpg" alt=""></div><figcaption>N° 01 初來報到</figcaption></figure>
+      <figure class="photo reveal" data-index="2"><div class="frame"><img src="images/photo02.jpg" alt=""></div><figcaption>N° 02 安心入睡</figcaption></figure>
+      <figure class="photo reveal" data-index="3"><div class="frame"><img src="images/photo03.jpg" alt=""></div><figcaption>N° 03 小小微笑</figcaption></figure>
+      <figure class="photo reveal" data-index="4"><div class="frame"><img src="images/photo04.jpg" alt=""></div><figcaption>N° 04 滿月紀念</figcaption></figure>
+      <figure class="photo reveal" data-index="5"><div class="frame"><img src="images/photo05.jpg" alt=""></div><figcaption>N° 05 被愛包圍</figcaption></figure>
+      <figure class="photo reveal" data-index="6"><div class="frame"><img src="images/photo06.jpg" alt=""></div><figcaption>N° 06 幸福時光</figcaption></figure>
+      <figure class="photo reveal" data-index="7"><div class="frame"><img src="images/photo07.jpg" alt=""></div><figcaption>N° 07 甜甜夢鄉</figcaption></figure>
+      <figure class="photo reveal" data-index="8"><div class="frame"><img src="images/photo08.jpg" alt=""></div><figcaption>N° 08 溫柔凝望</figcaption></figure>
+      <figure class="photo reveal" data-index="9"><div class="frame"><img src="images/photo09.jpg" alt=""></div><figcaption>N° 09 宇莃日常</figcaption></figure>
+      <figure class="photo reveal" data-index="10"><div class="frame"><img src="images/photo10.jpg" alt=""></div><figcaption>N° 10 小手小腳</figcaption></figure>
+      <figure class="photo reveal" data-index="11"><div class="frame"><img src="images/photo11.jpg" alt=""></div><figcaption>N° 11 一家人的愛</figcaption></figure>
+      <figure class="photo reveal" data-index="12"><div class="frame"><img src="images/photo12.jpg" alt=""></div><figcaption>N° 12 滿滿祝福</figcaption></figure>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="family-letter reveal">
+  <div class="section-inner">
+    <div class="family-letter reveal">
 
-    <div class="family-photo" data-index="13">
-      <img src="images/family.jpg" alt="陳宇莃全家福">
-    </div>
-
-    <div class="family-letter-content">
-      <div class="en">With Love From Mom & Dad</div>
-      <h3>爸爸媽媽的祝福</h3>
-
-      <div class="parents">
-        <span>爸爸｜陳功盛</span>
-        <span>媽媽｜許茹茵</span>
+      <div class="family-photo" data-index="13">
+        <img src="images/family.jpg" alt="陳宇莃全家福">
       </div>
 
-      <p>
-        大家好，我是陳宇莃。<br><br>
-        2026年4月24日，我帶著爸爸媽媽的期待與滿滿的愛，來到了這個世界。雖然我還不太會說話，但我已經感受到每一份溫柔的陪伴與祝福。<br><br>
-        親愛的宇莃，謝謝妳來到我們的生命裡，讓每一個平凡的日子都變得溫柔而珍貴。願妳在滿滿的愛裡，健康、平安、快樂地長大。未來無論走到哪裡，都能勇敢、善良，也永遠記得，爸爸媽媽會一直在妳身邊陪伴妳。<br><br>
-        謝謝大家陪我一起迎接人生的第一個月，也謝謝每一位家人與朋友給予我們滿滿的愛與祝福。
-      </p>
+      <div class="family-letter-content">
+        <div class="en">With Love From Mom & Dad</div>
+        <h3>爸爸媽媽的祝福</h3>
 
-      <div class="sign">— 爸爸 陳功盛・媽媽 許茹茵</div>
+        <div class="parents">
+          <span>爸爸｜陳功盛</span>
+          <span>媽媽｜許茹茵</span>
+        </div>
+
+        <p>
+          大家好，我是陳宇莃。<br><br>
+          2026年4月24日，我帶著爸爸媽媽的期待與滿滿的愛，來到了這個世界。雖然我還不太會說話，但我已經感受到每一份溫柔的陪伴與祝福。<br><br>
+          親愛的宇莃，謝謝妳來到我們的生命裡，讓每一個平凡的日子都變得溫柔而珍貴。願妳在滿滿的愛裡，健康、平安、快樂地長大。未來無論走到哪裡，都能勇敢、善良，也永遠記得，爸爸媽媽會一直在妳身邊陪伴妳。<br><br>
+          謝謝大家陪我一起迎接人生的第一個月，也謝謝每一位家人與朋友給予我們滿滿的愛與祝福。
+        </p>
+
+        <div class="sign">— 爸爸 陳功盛・媽媽 許茹茵</div>
+      </div>
+
     </div>
-
   </div>
 </section>
 
