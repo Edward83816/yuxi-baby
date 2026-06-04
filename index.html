@@ -19,7 +19,6 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0;}
-
 html{scroll-behavior:smooth;}
 
 body{
@@ -59,10 +58,6 @@ body::before{
   gap:56px;
   align-items:center;
   padding:72px 7vw;
-}
-
-.hero-copy{
-  position:relative;
 }
 
 .kicker{
@@ -115,7 +110,8 @@ body::before{
   border-radius:999px;
 }
 
-.hero-photo{
+.hero-photo,
+.family-photo{
   position:relative;
   padding:18px;
   background:rgba(255,250,242,.68);
@@ -124,13 +120,17 @@ body::before{
   box-shadow:var(--shadow);
 }
 
-.hero-photo img{
+.hero-photo img,
+.family-photo img{
   width:100%;
-  aspect-ratio:1.12/1;
   object-fit:cover;
   display:block;
   border-radius:30px;
   cursor:pointer;
+}
+
+.hero-photo img{
+  aspect-ratio:1.12/1;
 }
 
 .section{
@@ -142,11 +142,16 @@ body::before{
   margin-bottom:66px;
 }
 
-.section-head .en{
+.section-head .en,
+.letter-title .en,
+.family-copy .en{
   font-family:'Cormorant Garamond',serif;
   font-style:italic;
-  font-size:22px;
   color:var(--muted);
+}
+
+.section-head .en{
+  font-size:22px;
   letter-spacing:.2em;
   margin-bottom:18px;
 }
@@ -208,6 +213,57 @@ body::before{
   letter-spacing:.14em;
 }
 
+/* FAMILY */
+.family-wrap{
+  max-width:1060px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:52px;
+  align-items:center;
+}
+
+.family-photo img{
+  aspect-ratio:1.25/1;
+}
+
+.family-copy{
+  background:rgba(255,250,242,.72);
+  border:1px solid var(--line);
+  border-radius:42px;
+  padding:48px 42px;
+  box-shadow:0 18px 46px rgba(90,70,50,.06);
+}
+
+.family-copy .en{
+  font-size:24px;
+  margin-bottom:20px;
+}
+
+.family-copy h3{
+  font-size:30px;
+  font-weight:400;
+  letter-spacing:.22em;
+  margin-bottom:30px;
+}
+
+.parents{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-bottom:30px;
+  color:var(--deep);
+  letter-spacing:.12em;
+  font-size:16px;
+}
+
+.family-copy p{
+  font-size:17px;
+  line-height:2.25;
+  letter-spacing:.06em;
+  color:#5e544d;
+}
+
 .letter-wrap{
   max-width:960px;
   margin:auto;
@@ -229,10 +285,7 @@ body::before{
 }
 
 .letter-title .en{
-  font-family:'Cormorant Garamond',serif;
   font-size:24px;
-  font-style:italic;
-  color:var(--muted);
   margin-bottom:20px;
 }
 
@@ -344,9 +397,9 @@ footer strong{
     gap:16px;
   }
 
+  .family-wrap,
   .letter-wrap{
     grid-template-columns:1fr;
-    padding:32px 24px;
   }
 
   .letter-title{
@@ -362,12 +415,14 @@ footer strong{
     padding:86px 18px;
   }
 
-  .hero-photo{
+  .hero-photo,
+  .family-photo{
     border-radius:32px;
     padding:12px;
   }
 
-  .hero-photo img{
+  .hero-photo img,
+  .family-photo img{
     border-radius:24px;
   }
 
@@ -389,8 +444,14 @@ footer strong{
     grid-template-columns:1fr;
   }
 
-  .photo .frame{
-    aspect-ratio:1/1;
+  .family-copy,
+  .letter-wrap{
+    padding:34px 24px;
+  }
+
+  .family-copy h3,
+  .letter-title h3{
+    font-size:26px;
   }
 
   .section-head h2{
@@ -408,7 +469,6 @@ footer strong{
 <body>
 
 <section class="hero">
-
   <div class="hero-copy reveal">
     <div class="kicker">FULL MOON · 彌月紀念</div>
     <div class="en">a little girl, a whole new world</div>
@@ -423,86 +483,57 @@ footer strong{
   <div class="hero-photo reveal" data-index="0">
     <img src="images/hero.jpg" alt="陳宇莃彌月照片">
   </div>
-
 </section>
 
 <section class="section">
-
   <div class="section-head reveal">
     <div class="en">Precious Moments</div>
     <h2>宇莃寫真集</h2>
   </div>
 
   <div class="album">
-
-    <figure class="photo reveal" data-index="1">
-      <div class="frame"><img src="images/photo01.jpg" alt=""></div>
-      <figcaption>N° 01 初來報到</figcaption>
-    </figure>
-
-    <figure class="photo reveal" data-index="2">
-      <div class="frame"><img src="images/photo02.jpg" alt=""></div>
-      <figcaption>N° 02 安心入睡</figcaption>
-    </figure>
-
-    <figure class="photo reveal" data-index="3">
-      <div class="frame"><img src="images/photo03.jpg" alt=""></div>
-      <figcaption>N° 03 小小微笑</figcaption>
-    </figure>
-
-    <figure class="photo reveal" data-index="4">
-      <div class="frame"><img src="images/photo04.jpg" alt=""></div>
-      <figcaption>N° 04 滿月紀念</figcaption>
-    </figure>
-
-    <figure class="photo reveal" data-index="5">
-      <div class="frame"><img src="images/photo05.jpg" alt=""></div>
-      <figcaption>N° 05 被愛包圍</figcaption>
-    </figure>
-
-    <figure class="photo reveal" data-index="6">
-      <div class="frame"><img src="images/photo06.jpg" alt=""></div>
-      <figcaption>N° 06 幸福時光</figcaption>
-    </figure>
-
-    <figure class="photo reveal" data-index="7">
-      <div class="frame"><img src="images/photo07.jpg" alt=""></div>
-      <figcaption>N° 07 甜甜夢鄉</figcaption>
-    </figure>
-
-    <figure class="photo reveal" data-index="8">
-      <div class="frame"><img src="images/photo08.jpg" alt=""></div>
-      <figcaption>N° 08 溫柔凝望</figcaption>
-    </figure>
-
-    <figure class="photo reveal" data-index="9">
-      <div class="frame"><img src="images/photo09.jpg" alt=""></div>
-      <figcaption>N° 09 宇莃日常</figcaption>
-    </figure>
-
-    <figure class="photo reveal" data-index="10">
-      <div class="frame"><img src="images/photo10.jpg" alt=""></div>
-      <figcaption>N° 10 小手小腳</figcaption>
-    </figure>
-
-    <figure class="photo reveal" data-index="11">
-      <div class="frame"><img src="images/photo11.jpg" alt=""></div>
-      <figcaption>N° 11 一家人的愛</figcaption>
-    </figure>
-
-    <figure class="photo reveal" data-index="12">
-      <div class="frame"><img src="images/photo12.jpg" alt=""></div>
-      <figcaption>N° 12 滿滿祝福</figcaption>
-    </figure>
-
+    <figure class="photo reveal" data-index="1"><div class="frame"><img src="images/photo01.jpg"></div><figcaption>N° 01 初來報到</figcaption></figure>
+    <figure class="photo reveal" data-index="2"><div class="frame"><img src="images/photo02.jpg"></div><figcaption>N° 02 安心入睡</figcaption></figure>
+    <figure class="photo reveal" data-index="3"><div class="frame"><img src="images/photo03.jpg"></div><figcaption>N° 03 小小微笑</figcaption></figure>
+    <figure class="photo reveal" data-index="4"><div class="frame"><img src="images/photo04.jpg"></div><figcaption>N° 04 滿月紀念</figcaption></figure>
+    <figure class="photo reveal" data-index="5"><div class="frame"><img src="images/photo05.jpg"></div><figcaption>N° 05 被愛包圍</figcaption></figure>
+    <figure class="photo reveal" data-index="6"><div class="frame"><img src="images/photo06.jpg"></div><figcaption>N° 06 幸福時光</figcaption></figure>
+    <figure class="photo reveal" data-index="7"><div class="frame"><img src="images/photo07.jpg"></div><figcaption>N° 07 甜甜夢鄉</figcaption></figure>
+    <figure class="photo reveal" data-index="8"><div class="frame"><img src="images/photo08.jpg"></div><figcaption>N° 08 溫柔凝望</figcaption></figure>
+    <figure class="photo reveal" data-index="9"><div class="frame"><img src="images/photo09.jpg"></div><figcaption>N° 09 宇莃日常</figcaption></figure>
+    <figure class="photo reveal" data-index="10"><div class="frame"><img src="images/photo10.jpg"></div><figcaption>N° 10 小手小腳</figcaption></figure>
+    <figure class="photo reveal" data-index="11"><div class="frame"><img src="images/photo11.jpg"></div><figcaption>N° 11 一家人的愛</figcaption></figure>
+    <figure class="photo reveal" data-index="12"><div class="frame"><img src="images/photo12.jpg"></div><figcaption>N° 12 滿滿祝福</figcaption></figure>
   </div>
-
 </section>
 
 <section class="section">
+  <div class="family-wrap reveal">
 
+    <div class="family-photo" data-index="13">
+      <img src="images/family.jpg" alt="陳宇莃全家福">
+    </div>
+
+    <div class="family-copy">
+      <div class="en">Our Family</div>
+      <h3>我們的祝福</h3>
+
+      <div class="parents">
+        <div>爸爸｜陳功盛</div>
+        <div>媽媽｜許茹茵</div>
+      </div>
+
+      <p>
+        親愛的宇莃，謝謝妳來到我們的生命裡，讓每一個平凡的日子都變得溫柔而珍貴。<br><br>
+        願妳在滿滿的愛與祝福中，健康、平安、快樂地長大。未來無論走到哪裡，都能勇敢、善良，也永遠記得，爸爸媽媽會一直在妳身邊陪伴妳。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
   <div class="letter-wrap reveal">
-
     <div class="letter-title">
       <div class="en">A Letter from Me</div>
       <h3>致 愛 我 的 大 家</h3>
@@ -518,9 +549,7 @@ footer strong{
 
       <div class="sign">— Yu Xi, 2026 spring</div>
     </div>
-
   </div>
-
 </section>
 
 <footer>
@@ -560,7 +589,8 @@ const photos = [
   'images/photo09.jpg',
   'images/photo10.jpg',
   'images/photo11.jpg',
-  'images/photo12.jpg'
+  'images/photo12.jpg',
+  'images/family.jpg'
 ];
 
 let current = 0;
@@ -583,6 +613,8 @@ function move(step){
 }
 
 document.querySelector('.hero-photo').addEventListener('click',()=>openBox(0));
+document.querySelector('.family-photo').addEventListener('click',()=>openBox(13));
+
 document.querySelectorAll('.photo').forEach(item=>{
   item.addEventListener('click',()=>openBox(Number(item.dataset.index)));
 });
